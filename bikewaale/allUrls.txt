@@ -1,0 +1,25 @@
+Text,Link
+Bajaj Freedom,https://www.bikewale.com/bajaj-bikes/cng-freedom-125/reviews/
+Bajaj Pulsar N160,https://www.bikewale.com/bajaj-bikes/pulsar-n160/reviews/
+Bajaj Pulsar 150,https://www.bikewale.com/bajaj-bikes/pulsar-150/reviews/
+Bajaj Pulsar NS200,https://www.bikewale.com/bajaj-bikes/pulsar-ns/reviews/
+Bajaj Pulsar 125,https://www.bikewale.com/bajaj-bikes/pulsar-125/reviews/
+Bajaj Pulsar NS160,https://www.bikewale.com/bajaj-bikes/pulsar-ns-160/reviews/
+Bajaj Pulsar NS125,https://www.bikewale.com/bajaj-bikes/pulsar-ns125/reviews/
+Bajaj Pulsar RS 200,https://www.bikewale.com/bajaj-bikes/rs-200/reviews/
+Bajaj Chetak,https://www.bikewale.com/bajaj-bikes/chetak/reviews/
+Bajaj Pulsar 220 F,https://www.bikewale.com/bajaj-bikes/pulsar-220/reviews/
+Bajaj Pulsar N150,https://www.bikewale.com/bajaj-bikes/pulsar-n150/reviews/
+Bajaj Dominar 400,https://www.bikewale.com/bajaj-bikes/dominar-400/reviews/
+Bajaj Pulsar N250,https://www.bikewale.com/bajaj-bikes/pulsar-n250/reviews/
+Bajaj Dominar 250,https://www.bikewale.com/bajaj-bikes/dominar-250/reviews/
+Bajaj Platina 100,https://www.bikewale.com/bajaj-bikes/platina-100/reviews/
+Bajaj Platina 110,https://www.bikewale.com/bajaj-bikes/platina-110/reviews/
+Bajaj CT 125X,https://www.bikewale.com/bajaj-bikes/ct-125x/reviews/
+Bajaj Avenger Street 160,https://www.bikewale.com/bajaj-bikes/avenger-street-160/reviews/
+Bajaj CT 110,https://www.bikewale.com/bajaj-bikes/ct-110/reviews/
+Bajaj Pulsar P150,https://www.bikewale.com/bajaj-bikes/pulsar-p150/reviews/
+Bajaj Pulsar F250,https://www.bikewale.com/bajaj-bikes/pulsar-f250/reviews/
+Bajaj Avenger Cruise 220,https://www.bikewale.com/bajaj-bikes/avenger-cruise-220/reviews/
+Bajaj Avenger Street 220,https://www.bikewale.com/bajaj-bikes/avenger-street-220/reviews/
+Bajaj Pulsar N125,https://www.bikewale.com/bajaj-bikes/pulsar-n125/reviews/
