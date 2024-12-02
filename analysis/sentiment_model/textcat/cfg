@@ -1,6 +1,7 @@
 {
   "labels":[
     "POSITIVE",
+    "NEUTRAL",
     "NEGATIVE"
   ],
   "threshold":0.0,
