@@ -1,18 +1,13 @@
 Extraction
 ----------------------------------------
-./bikeDekhoExtractUrls.ipynb
-./bikeDekho.ipynb
-
-Club with previous files
-----------------------------------------
-./ChangeHeaderLine.ipynb
-./AddBikeName.ipynb
+BikeDekhoExtractUrls.py
+BikeDekho.py
 
 Processing
 ----------------------------------------
-./sentiment.py
-./KeywordExtractionTopicCategorization.ipynb
+Sentiment.py
+Topic_Keyword.py
 
 Final
 ----------------------------------------
-./CombineCsv.py
+CombineCsv.py
