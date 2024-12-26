@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 import os
 import pandas as pd
 from keybert import KeyBERT
@@ -89,8 +86,8 @@ def extract_keywords_if_other(review_text, bike_name_words, bucket):
         return extract_keywords_without_bike_name(review_text, bike_name_words, top_n=3)
     return ""
 
-# Process all CSV files in the current working directory and subfolders
-for root, dirs, files in os.walk('.'):  # Traverse through all subfolders
+# Process all CSV files in the './Review' directory and its subfolders
+for root, dirs, files in os.walk('./Reviews'):  # Traverse through all subfolders of the 'Review' folder
     for file in files:
         if file.endswith('.csv'):
             file_path = os.path.join(root, file)
@@ -100,9 +97,9 @@ for root, dirs, files in os.walk('.'):  # Traverse through all subfolders
             df = pd.read_csv(file_path)
 
             # Skip if 'Assigned_Bucket' column already exists
-            if 'Assigned_Bucket' in df.columns:
-                print(f"Skipping file '{file_path}' as it already contains the 'Assigned_Bucket' column.")
-                continue
+            # if 'Assigned_Bucket' in df.columns:
+            #     print(f"Skipping file '{file_path}' as it already contains the 'Assigned_Bucket' column.")
+            #     continue
 
             # Extract bike name from file name
             bike_name = " ".join(file_path.split("_")[:-1])  # Extract bike name from file name (without 'reviews')
@@ -131,4 +128,3 @@ for root, dirs, files in os.walk('.'):  # Traverse through all subfolders
             print(f"Updated the input file '{file_path}' with keywords, assigned buckets, and assigned sub-buckets.")
             print("Sample Keywords Output:")
             print(df['Keywords'].head())
-
