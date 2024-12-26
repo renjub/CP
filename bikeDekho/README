@@ -1,13 +1,13 @@
 Extraction
 ----------------------------------------
-BikeDekhoExtractUrls.py
-BikeDekho.py
+BikeDekhoExtractUrls.py - Extract urls
+BikeDekho.py - Extract reviews from the urls
 
 Processing
 ----------------------------------------
-Sentiment.py
-Topic_Keyword.py
+Sentiment.py - Find sentiment
+Topic_Keyword.py - Extract keywords
 
 Final
 ----------------------------------------
-CombineCsv.py
+CombineCsv.py - Combines all csv into 1 files. Helps in analysis
