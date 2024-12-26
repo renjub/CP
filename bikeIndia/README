@@ -1,0 +1,6 @@
+BikeIndiaExtractUrl.py      - Extract Bajaj bikes url
+BikeIndia.py                - Extract articles from url
+Generic.list                - list of articles which are not specific to any particular bike. This has to be created manually
+MoveGenericFiles.py         - Move the files in Generic.list to another folder. We are not doing analysis on those
+TitleNameMatch.py           - Try to extrat bike name from the title. IMPORTANT: NOT ALWAYS CORRECT. NEEDS TO BE DOUBLED CHECKCED
+ArticleSentiment_Keyword.py - Find the sentiment and extract keywords
