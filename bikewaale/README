@@ -1,0 +1,8 @@
+BikewaleExtractUrl.py - Extract Bajaj bikes urls
+Bikewale.py - Extract revies from urls
+
+Sentiment.py - Sentiment analysis
+AssignBucket.py - Put the assignment to a pre defined bucket
+KeywordExtraction.py - Extract main keywords of the review
+
+CombineCsv.py - Combine the csv for visualization
