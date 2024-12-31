@@ -4,7 +4,6 @@
 import time
 import os
 import sys
-print(sys.executable)
 from bs4 import BeautifulSoup
 import asyncio
 import nest_asyncio
@@ -103,7 +102,7 @@ async def get_reviews(page):
 
     return all_reviews
 
-def save_reviews_to_csv(reviews, file_name):
+def save_reviews_to_csv(reviews, file_name, bike_name):
     # Ensure the 'reviews' folder exists
     folder_path = os.path.join(os.getcwd(), 'reviews')
     os.makedirs(folder_path, exist_ok=True)
@@ -111,11 +110,14 @@ def save_reviews_to_csv(reviews, file_name):
     # Construct the full file path
     file_path = os.path.join(folder_path, file_name)
 
-    headers = ['Top_ZW_Voice', 'Badge', 'Title', 'Review_Text', 'Likes', 'Star_Rating']
+    # Include Bike_Name in the headers
+    headers = ['Bike', 'Top_ZW_Voice', 'Badge', 'Title', 'Review_Text', 'Likes', 'Star_Rating']
     with open(file_path, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=headers, quotechar='"', quoting=csv.QUOTE_MINIMAL)
         writer.writeheader()
         for review in reviews:
+            # Add the bike name to each review
+            review['Bike'] = bike_name
             writer.writerow(review)
     print(f"Reviews saved to: {file_path}")
 
@@ -140,7 +142,7 @@ async def scrape_reviews(url, bike_name, file_name):
         await click_load_more_review_button(page, bike_name)
         all_reviews = await get_reviews(page)
         if all_reviews:
-            save_reviews_to_csv(all_reviews, file_name)
+            save_reviews_to_csv(all_reviews, file_name, bike_name)  # Pass bike_name here
         print(f"Reviews for '{bike_name}' saved to {file_name}.")
         await browser.close()
 
