@@ -86,8 +86,12 @@ async def get_last_page_number(page):
 
 async def extract_reviews(page, base_url, last_page, product_name):
     review_count = 0
-    folder_name = product_name.replace(" ", "_")
+    folder_name = os.path.join("Reviews", product_name.replace(" ", "_"))
     
+    # Ensure Reviews folder exists
+    if not os.path.exists("Reviews"):
+        os.makedirs("Reviews")
+
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
 
@@ -105,10 +109,10 @@ async def extract_reviews(page, base_url, last_page, product_name):
 
             for review_div in review_divs:
                 review_data = {
-                    'Product'      : product_name,
+                    'Bike'         : product_name,
                     'Title'        : extract_review_title(review_div),
                     'Rating'       : extract_star_rating_from_review(review_div),
-                    'Review Text'  : extract_review_text(review_div),
+                    'Review'       : extract_review_text(review_div),
                     'Date and Time': extract_review_datetime(review_div),
                     'Location'     : extract_location(review_div),
                     'Likes'        : extract_likes(review_div),
@@ -119,7 +123,7 @@ async def extract_reviews(page, base_url, last_page, product_name):
 
             if all_reviews:
                 df = pd.DataFrame(all_reviews)
-                columns_order = ['Product', 'Rating', 'Title', 'Review Text', 'Date and Time', 'Location', 'Likes', 'Comments', 'Fake Status']
+                columns_order = ['Bike', 'Rating', 'Title', 'Review', 'Date and Time', 'Location', 'Likes', 'Comments', 'Fake Status']
                 df = df[columns_order]
                 csv_filename = os.path.join(folder_name, f"{product_name.replace(' ', '_')}_page_{page_number}.csv")
                 df.to_csv(csv_filename, mode='w', header=True, index=False)
@@ -139,7 +143,7 @@ async def run_scraper():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
-        file_path = 'extracted_links.csv'
+        file_path = 'BajajLinks.csv'
         extracted_links_df = pd.read_csv(file_path)
         logging.info(extracted_links_df)
 
