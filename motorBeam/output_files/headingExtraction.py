@@ -9,7 +9,7 @@ import re
 import pandas as pd
 
 # Function to extract headings, bold text, and associated content
-def extract_content(text, ignore_words, ignore_words_heading):
+def extract_content(text, ignore_words):
     # Find all headings and bold text with their positions
     pattern = r"(## Heading: .+?|\*\*(.+?)\*\*)"
     matches = list(re.finditer(pattern, text))
@@ -27,9 +27,6 @@ def extract_content(text, ignore_words, ignore_words_heading):
 
         # Filter out ignored words in bold text or heading
         if not any(word in heading_or_bold for word in ignore_words):
-            # Skip headings that contain any of the ignore_words_heading in their content
-            if heading_or_bold.startswith("## Heading:") and any(word in content for word in ignore_words_heading):
-                continue
             extracted_data.append([heading_or_bold, content])
 
     return extracted_data
@@ -39,10 +36,7 @@ def process_txt_files():
     ignore_words = [
         "Bike Tested", "Price OTR", "Further Reading",
         "Alternatives", "Road Test No", "Test Location",
-        "Riders", "Picture Editing"
-    ]
-
-    ignore_words_heading = [
+        "Riders", "Picture Editing",
         "Specifications", "Dimensions"
     ]
 
@@ -62,7 +56,10 @@ def process_txt_files():
         with open(txt_file, 'r', encoding='utf-8') as file:
             content = file.read()
 
-        extracted_data = extract_content(content, ignore_words, ignore_words_heading)
+        extracted_data = extract_content(content, ignore_words)
+
+        # Remove ** from bold text in the extracted data
+        extracted_data = [[re.sub(r"\*\*(.+?)\*\*", r"\1", item[0]), item[1]] for item in extracted_data]
 
         # Create a DataFrame from the extracted data
         df = pd.DataFrame(extracted_data, columns=["Heading/Bold Text", "Content"])
