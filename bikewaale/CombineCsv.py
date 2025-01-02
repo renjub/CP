@@ -35,6 +35,6 @@ def combine_csv_files(root_folder, output_file):
         print("`No CSV files found to combine.`")
 
 # Usage
-root_folder = './'  # Replace with your folder path
-output_file = 'combined_file.csv'    # Replace with your desired output file name
+root_folder = './reviews'  # Replace with your folder path
+output_file = 'Bikewale.csv'    # Replace with your desired output file name
 combine_csv_files(root_folder, output_file)
