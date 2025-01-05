@@ -94,7 +94,7 @@ async def get_reviews(page):
         review_data['Top_ZW_Voice'] = top_zw_voice.get_text(strip=True) if top_zw_voice else "-"
         review_data['Badge']        = badge.get_text(strip=True) if badge else "-"
         review_data['Title']        = title.get_text(strip=True) if title else "-"
-        review_data['Review_Text']  = review_text.get_text(strip=True) if review_text else "-"
+        review_data['Review']       = review_text.get_text(strip=True) if review_text else "-"
         review_data['Likes']        = likes.get_text(strip=True) if likes else "-"
         review_data['Star_Rating']  = star_rating.get_text(strip=True) if star_rating else "-"
 
@@ -111,7 +111,7 @@ def save_reviews_to_csv(reviews, file_name, bike_name):
     file_path = os.path.join(folder_path, file_name)
 
     # Include Bike_Name in the headers
-    headers = ['Bike', 'Top_ZW_Voice', 'Badge', 'Title', 'Review_Text', 'Likes', 'Star_Rating']
+    headers = ['Bike', 'Top_ZW_Voice', 'Badge', 'Title', 'Review', 'Likes', 'Star_Rating']
     with open(file_path, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=headers, quotechar='"', quoting=csv.QUOTE_MINIMAL)
         writer.writeheader()
